@@ -5,7 +5,7 @@ La idea de este repositorio es mantener un orden en las clases y tener un métod
 ## Contribuciones
 
 Las contribuciones son bienvenidas! pueden subir todo tipo de código acá que los ayude a ustedes a practicar
-Para empezar a contribuir pueden entrar en `Contribuciones.md`.
+Para empezar a contribuir pueden entrar en `contribuciones.md`.
 
 ## Uso del repositorio
 
