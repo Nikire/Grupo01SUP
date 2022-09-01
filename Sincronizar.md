@@ -18,3 +18,9 @@ Una vez hecho esto, va a aparecer un cartel como el siguiente:
 <img src='./img/sync3.png' alt='img3'/>
 
 Y para finalizar la sincronización, deberían apretar en el botón que dice "Update branch" o "Actualizar rama".
+
+Ahora lo que restaría hacer es una vez sincronizado el Fork con la main,parados sobre los archivos locales de su repositorio ( ya sea en el visual studio, bash o cualquier terminal compatible con git) realizar un git pull, para traer todos los archivos al repositorio local que no tengamos y que si existan en nuestro repositorio de GitHub.
+
+```bash
+git pull
+```
