@@ -1,11 +1,10 @@
-import './App.css';
+import "./App.css";
+import AppRouter from "./components/AppRouter/AppRouter.jsx";
 
 function App() {
 	return (
 		<div className="App">
-			{/* 			<h1>texto 3</h1>
-			<h2 className="subtitle">texto 2</h2>
-			<p>texto 3</p> */}
+			<AppRouter />
 		</div>
 	);
 }
