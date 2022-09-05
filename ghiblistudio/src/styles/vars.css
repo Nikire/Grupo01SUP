@@ -1,0 +1,13 @@
+:root {
+	--font-main: #0e0e0e;
+	--font-subtitle: hsl(0, 0%, 30%);
+	--background-main: hsl(0, 0%, 95%);
+	--background-headers: hsl(0, 0%, 70%);
+	--background-blocks: hsl(0, 0%, 60%);
+	--details-light: hsl(0, 72%, 74%);
+	--details-main: #de3837;
+	--details-dark: hsl(0, 72%, 34%);
+	--secondary-light: hsl(18, 72%, 74%);
+	--secondary-main: hsl(18, 72%, 54%);
+	--secondary-dark: hsl(18, 72%, 34%);
+}

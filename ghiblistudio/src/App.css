@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans JP', sans-serif;
+	color: var(--font-main);
+	font-weight: 100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: 500;
+}
+
+.subtitle {
+	font-weight: 300;
+	color: var(--font-subtitle);
+}
