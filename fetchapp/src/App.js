@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-import Container from './components/Container/Container';
+import logo from "./logo.svg";
+import "./App.css";
+import Container from "./components/Container/Container";
 function App() {
 	return (
 		<div className="App">
