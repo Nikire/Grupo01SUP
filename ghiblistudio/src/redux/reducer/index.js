@@ -1,4 +1,4 @@
-import * as actions from "../actionTypes";
+import * as actions from '../actionTypes';
 
 const initialState = {
 	allFilms: [],
@@ -14,6 +14,13 @@ const rootReducer = (state = initialState, action) => {
 				allFilms: action.payload,
 			};
 		}
+		case actions.GET_DETAILS: {
+			return {
+				...state,
+				filmDetails: action.payload,
+			};
+		}
+
 		default:
 			return state;
 	}
