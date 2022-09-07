@@ -20,6 +20,11 @@ const rootReducer = (state = initialState, action) => {
 				filmDetails: action.payload,
 			};
 		}
+		case actions.SET_LOADING:
+			return {
+				...state,
+				loading: action.payload,
+			};
 
 		default:
 			return state;
