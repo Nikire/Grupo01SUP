@@ -5,21 +5,18 @@ const Container = () => {
 	// Usando el operador ternario validar que el contador no sea
 	// menor que 0 ni que supere los 7
 
-	const [count, setCount] = React.useState({
-		latitud: "32",
-		longitud: "-58",
-	});
+	const [count, setCount] = React.useState([]);
 	function handleSumar() {
 		setCount(count + 1);
 	}
 
-	// function handleSumarAsync() {
-	// 	setCount(papasConQueso => ({
-	// 		...papasConQueso,
-	// 		count: 1000,
-	// 		latitud: 32323232,
-	// 	}));
-	// }
+	function handleSumarAsync() {
+		setCount(papasConQueso => ({
+			...papasConQueso,
+			count: 1000,
+			latitud: 32323232,
+		}));
+	}
 
 	function handleRestar() {
 		setCount(count - 1);

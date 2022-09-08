@@ -1,4 +1,5 @@
 :root {
+	/* algunos detalles */
 	--font-main: #0e0e0e;
 	--font-subtitle: hsl(0, 0%, 30%);
 	--background-main: hsl(0, 0%, 95%);
@@ -10,4 +11,9 @@
 	--secondary-light: hsl(18, 72%, 74%);
 	--secondary-main: hsl(18, 72%, 54%);
 	--secondary-dark: hsl(18, 72%, 34%);
+	/* Colores usados en el SUP */
+	--white: #fff;
+	--pink: #ce2147;
+	--pink-dark: #800013;
+	--pink-light: #ff96a6;
 }

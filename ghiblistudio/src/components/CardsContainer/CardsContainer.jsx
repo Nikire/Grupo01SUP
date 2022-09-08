@@ -1,24 +1,26 @@
-import React, { useEffect } from 'react';
-import { getFilms } from '../../redux/actions';
-import { useDispatch, useSelector } from 'react-redux';
-import Card from '../Card/Card';
-import { Link } from 'react-router-dom';
-import Spinner from '../Spinner/Spinner';
+import React, { useEffect } from "react";
+import { getFilms } from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import Card from "../Card/Card";
+import { Link } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
+import s from "./CardsContainer.module.css";
+
 const CardsContainer = () => {
 	const dispatch = useDispatch();
-	const filmsRedux = useSelector((state) => state.allFilms);
-	const loading = useSelector((state) => state.loading);
+	const filmsRedux = useSelector(state => state.allFilms);
+	const loading = useSelector(state => state.loading);
 
 	useEffect(() => {
 		dispatch(getFilms());
 	}, [dispatch]);
 	return (
-		<div>
-			<button onClick={() => console.log(filmsRedux)}>asdf</button>
+		<div className={s.CardsContainer}>
+			{/* <button onClick={() => console.log(filmsRedux)}>asdf</button> */}
 			{loading ? (
 				<Spinner />
 			) : filmsRedux.length ? (
-				filmsRedux.map((film) => (
+				filmsRedux.map(film => (
 					<Link key={film.id} to={`/films/${film.id}`}>
 						<Card film={film} />
 					</Link>

@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Noto Sans JP', sans-serif;
+	font-family: "Noto Sans JP", sans-serif;
 	color: var(--font-main);
 	font-weight: 100;
 }
@@ -18,4 +18,16 @@ h5 {
 .subtitle {
 	font-weight: 300;
 	color: var(--font-subtitle);
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	width: 100%;
 }

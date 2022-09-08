@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
+import s from "./Spinner.module.css";
 
 export default function Spinner() {
-	return <h1 style={{ color: 'red' }}>ESTOY CARGANDO</h1>;
+	return <div className={s.spinner}></div>;
 }
