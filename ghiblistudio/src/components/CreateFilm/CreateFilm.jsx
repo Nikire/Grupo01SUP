@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function CreateFilm() {
 	const [input, setInput] = useState({
-		name: '',
-		description: '',
-		image: '',
+		name: "",
+		description: "",
+		image: "",
 	});
 	//input.name
 	//input["name"]
 
 	const [errors, setErrors] = useState({});
 
-	const handleChange = (e) => {
+	const handleChange = e => {
 		setInput({
 			...input,
 			[e.target.name]: e.target.value,
@@ -21,7 +21,7 @@ export default function CreateFilm() {
 			[e.target.name]: e.target.value,
 		});
 	};
-	const handleSubmit = (e) => {
+	const handleSubmit = e => {
 		e.preventDefault();
 		//dispatch(createFilm(input))
 		if (!input.name || input.name.length > 20)
@@ -34,11 +34,11 @@ export default function CreateFilm() {
 	return (
 		<div>
 			<h1>Crear una pelicula</h1>
-			<form onSubmit={(e) => handleSubmit(e)}>
+			<form onSubmit={e => handleSubmit(e)}>
 				<input
 					type="text"
 					placeholder="name"
-					onChange={(e) => handleChange(e)}
+					onChange={e => handleChange(e)}
 					name="name"
 					value={input.name}
 				/>
@@ -46,7 +46,7 @@ export default function CreateFilm() {
 				<input
 					type="description"
 					placeholder="description"
-					onChange={(e) => handleChange(e)}
+					onChange={e => handleChange(e)}
 					name="description"
 					value={input.description}
 				/>
@@ -54,7 +54,7 @@ export default function CreateFilm() {
 					type="text"
 					placeholder="image"
 					name="image"
-					onChange={(e) => handleChange(e)}
+					onChange={e => handleChange(e)}
 					value={input.image}
 				/>
 				<button type="submit">CREAR PELICULITA</button>
