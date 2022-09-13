@@ -1,0 +1,11 @@
+.input {
+	outline: none;
+}
+
+.error {
+	outline: 2px solid #f00;
+}
+
+.completed {
+	outline: 2px solid #0f0;
+}
