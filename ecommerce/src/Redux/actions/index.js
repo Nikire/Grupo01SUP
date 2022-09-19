@@ -19,7 +19,6 @@ export function fetchProducts() {
 
 export const buyProduct = (prod_id, products) => dispatch => {
 	// prod_id = 5
-	console.log(prod_id);
 	const encontrado = products.find(el => el.id === prod_id);
 	if (encontrado) {
 		dispatch({
