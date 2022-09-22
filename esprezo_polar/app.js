@@ -1,5 +1,7 @@
 // TYPE module
 // import { Express } from "express";
+// Esto vendría del controller (en algún futuro no tan lejano)
+// const {deleteProducto} = require('./controller/products.js')
 
 // TYPE commonjs
 const express = require("express");
@@ -81,7 +83,7 @@ app.put("/productos/:prod_id", (req, res) => {
 // });
 
 // BODY
-app.post("/", (req, res) => {
+app.post("/productos", (req, res) => {
 	const { price, name, description } = req.body;
 	const id = arr[arr.length - 1].id + 1;
 	console.log(id);
@@ -104,3 +106,22 @@ app.post("/crearProducto", (req, res) => {
 	// }
 	//)
 });
+
+
+
+// DELETE
+app.delete('/productos/:prod_id', async (req,res)=>{
+	// const {name} = req.body;
+	// const newArr = arr.filter(el=>el.name !== name)
+	const {prod_id} = req.params;
+	arr = arr.filter(el=> el.id !== parseInt(prod_id))
+	res.status(200).json(arr)
+
+	// try {
+	// 	await deleteProducto()
+	// 	res.status(200).json('se borro todo papi')
+	// } catch (error) {
+	// 	res.status(400).json(error)
+	// }
+	
+})
