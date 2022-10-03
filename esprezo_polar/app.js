@@ -4,10 +4,14 @@
 // const {deleteProducto} = require('./controller/products.js')
 
 // TYPE commonjs
-const express = require("express");
+const express = require('express');
 // const controller = require("./controller/index.js");
+var morgan = require('morgan');
+var cors = require('cors');
 const app = express();
 // middleware para que la app pueda leer json
+app.use(cors());
+app.use(morgan('combined'));
 app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
@@ -23,39 +27,47 @@ Aspectos importantes
 let arr = [
 	{
 		id: 1,
-		name: "pistola",
+		name: 'pistola',
 		price: 2300,
-		description: "buen bandolero",
+		description: 'buen bandolero',
 	},
 	{
 		id: 2,
-		name: "Espada",
+		name: 'Espada',
 		price: 2300,
-		description: "Linda katana bro",
+		description: 'Linda katana bro',
 	},
 	{
 		id: 3,
-		name: "escudo",
+		name: 'escudo',
 		price: 2300,
-		description: "Lo que tankeas lpm",
+		description: 'Lo que tankeas lpm',
 	},
 	{
 		id: 4,
-		name: "empanadas",
+		name: 'empanadas',
 		price: 2300,
-		description: "tengo alto hambre",
+		description: 'tengo alto hambre',
 	},
 ];
 
-app.get("/productos", (req, res) => {
+app.get('/productos', (req, res) => {
 	res.status(200).json(arr);
+});
+app.get('/productos/:id', (req, res) => {
+	const { id } = req.params;
+	console.log(id);
+	if (!id) return res.status(404).json({ msg: 'not found' });
+	let finded = arr.find((el) => el.id === parseInt(id));
+	console.log(finded);
+	res.status(200).json(finded);
 });
 
 // UPDATE PARA EXPRESS ES PUT
-app.put("/productos/:prod_id", (req, res) => {
+app.put('/productos/:prod_id', (req, res) => {
 	const { prod_id } = req.params;
 	const description = req.body.description;
-	const newArr = arr.map(el =>
+	const newArr = arr.map((el) =>
 		el.id === parseInt(prod_id) ? { ...el, description: description } : el
 	);
 	arr = newArr;
@@ -83,7 +95,7 @@ app.put("/productos/:prod_id", (req, res) => {
 // });
 
 // BODY
-app.post("/productos", (req, res) => {
+app.post('/productos', (req, res) => {
 	const { price, name, description } = req.body;
 	const id = arr[arr.length - 1].id + 1;
 	console.log(id);
@@ -97,7 +109,7 @@ app.post("/productos", (req, res) => {
 });
 
 // CREATE
-app.post("/crearProducto", (req, res) => {
+app.post('/crearProducto', (req, res) => {
 	// controller.crearProducto(
 	// {
 	// name:'Espada',
@@ -107,15 +119,13 @@ app.post("/crearProducto", (req, res) => {
 	//)
 });
 
-
-
 // DELETE
-app.delete('/productos/:prod_id', async (req,res)=>{
+app.delete('/productos/:prod_id', async (req, res) => {
 	// const {name} = req.body;
 	// const newArr = arr.filter(el=>el.name !== name)
-	const {prod_id} = req.params;
-	arr = arr.filter(el=> el.id !== parseInt(prod_id))
-	res.status(200).json(arr)
+	const { prod_id } = req.params;
+	arr = arr.filter((el) => el.id !== parseInt(prod_id));
+	res.status(200).json(arr);
 
 	// try {
 	// 	await deleteProducto()
@@ -123,5 +133,4 @@ app.delete('/productos/:prod_id', async (req,res)=>{
 	// } catch (error) {
 	// 	res.status(400).json(error)
 	// }
-	
-})
+});
