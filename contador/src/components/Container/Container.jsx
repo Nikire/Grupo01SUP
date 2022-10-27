@@ -19,7 +19,8 @@ const Container = () => {
 	}
 
 	function handleRestar() {
-		setCount(count - 1);
+		//        2/1      1
+		setCount(count >= 1 ? count - 1 : count - 0);
 	}
 	return (
 		<>
